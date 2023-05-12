@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Menu from '@components/Menu';
 import '@styles/Header.scss';
 
 import menuImg from '@icons/icon_menu.svg';
@@ -6,6 +7,12 @@ import logoImg from '@logos/logo_yard_sale.svg';
 import shoppingCartImg from '@icons/icon_shopping_cart.svg';
 
 const Header = () => {
+	const [toggle, setToggle] = useState(false);
+
+	const handleToggle = () => {
+		setToggle(!toggle);
+	};
+
 	return (
 		<nav>
 			<img src={menuImg} alt="menu" className="menu" />
@@ -34,13 +41,16 @@ const Header = () => {
 			</div>
 			<div className="navbar-right">
 				<ul>
-					<li className="navbar-email">platzi@example.com</li>
+					<li className="navbar-email" onClick={handleToggle}>
+						platzi@example.com
+					</li>
 					<li className="navbar-shopping-cart">
 						<img src={shoppingCartImg} alt="shopping cart" />
 						<div>2</div>
 					</li>
 				</ul>
 			</div>
+			{toggle && <Menu />}
 		</nav>
 	);
 }
