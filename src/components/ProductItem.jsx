@@ -20,7 +20,7 @@ const ProductItem = ({ product }) => {
 					<p>{product.title}</p>
 				</div>
 				<figure onClick={() => handleClick(product)}>
-					<img src={addToCartImg} alt="" />
+					<img className="pointer" src={addToCartImg} alt="" />
 				</figure>
 			</div>
 		</div>

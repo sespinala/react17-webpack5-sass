@@ -5,12 +5,16 @@
 	padding: 24px;
 	box-sizing: border-box;
 	position: absolute;
-	right: 0;
+	right: -360px;
 	background-color: white;
 	top: 60px;
-	bottom: auto;
+	bottom: 0;
 	border-radius: 6px;
 	border: 1px solid var(--very-light-pink);
+	position: fixed;
+	transition: 1s ease;
+	animation: swipeLeft 1s ease forwards;
+	overflow-y: auto;
 }
 .title-container {
 	display: flex;
@@ -61,4 +65,7 @@
 	.MyOrder {
 		width: 100%;
 	}
+}
+@keyframes swipeLeft {
+	100% {transform: translateX(-360px);}
 }

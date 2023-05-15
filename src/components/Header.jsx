@@ -45,13 +45,13 @@ const Header = () => {
 			</div>
 			<div className="navbar-right">
 				<ul>
-					<li className="navbar-email" onClick={handleToggle}>
+					<li className="navbar-email pointer" onClick={handleToggle}>
 						platzi@example.com
 					</li>
 					<li 
 						className="navbar-shopping-cart"
 						onClick={() => setToggleOrders(!toggleOrders)}>
-						<img src={shoppingCartImg} alt="shopping cart" />
+						<img src={shoppingCartImg} alt="shopping cart" className="pointer" />
 						{ state.cart.length > 0 ? 
 							<div>{state.cart.length}</div> : 
 							null 
@@ -60,7 +60,7 @@ const Header = () => {
 				</ul>
 			</div>
 			{toggle && <Menu />}
-			{toggleOrders && <MyOrder />}
+			{toggleOrders && <MyOrder toggleOrders={toggleOrders} setToggleOrders={setToggleOrders} />}
 		</nav>
 	);
 }
